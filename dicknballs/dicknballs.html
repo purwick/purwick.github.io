@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Penis Length Calculator</title>
+    <link rel="stylesheet" href="dicknballs.css">
+	<script>
+		function calculateLength() {
+			// Get input values
+			var length = parseFloat(document.getElementById("length").value);
+			var diameter = parseFloat(document.getElementById("diameter").value);
+			var weight = parseFloat(document.getElementById("weight").value);
+			var girth = parseFloat(document.getElementById("girth").value);
+			var angle = parseFloat(document.getElementById("angle").value);
+
+			// Calculate adjusted penis length
+			var adjustedLength = ((length * diameter) + (weight / girth)) / Math.pow(angle, 2);
+
+			// Display result
+			document.getElementById("result").innerHTML = "Your adjusted penis length is " + adjustedLength.toFixed(2) + " units.";
+		}
+	</script>
+</head>
+<body>
+	<h1>Penis Length Calculator</h1>
+	<form>
+		<label for="length">Length (in inches):</label>
+		<input type="number" id="length" name="length"><br><br>
+
+		<label for="diameter">Diameter (in inches):</label>
+		<input type="number" id="diameter" name="diameter"><br><br>
+
+		<label for="weight">Weight (in grams):</label>
+		<input type="number" id="weight" name="weight"><br><br>
+
+		<label for="girth">Girth (in inches):</label>
+		<input type="number" id="girth" name="girth"><br><br>
+
+		<label for="angle">Angle of Tip (in degrees):</label>
+		<input type="number" id="angle" name="angle"><br><br>
+
+		<input type="button" value="Calculate Length" onclick="calculateLength()">
+	</form>
+
+	<div id="result"></div>
+</body>
+</html>
